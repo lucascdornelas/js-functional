@@ -15,13 +15,16 @@ function subtrairNoTerminal(e1, e2){
 exec(somarNoTerminal, 56, 38);
 exec(subtrairNoTerminal, 182, 27);
 
+const fn = () => console.log("Exec...");
+setInterval(fn, 1000);
 
+/* Callback 2: Aplicação de callback em algo mais próximo do real */
 const fs = require('fs');
 const path = require('path');
 
 const caminho = path.join(__dirname, 'users.txt');
 
-const printLine = (err, content) => {
+const printContent = (err, content) => {
     if(!err){
         console.log(content.toString());
     }else {
@@ -29,4 +32,4 @@ const printLine = (err, content) => {
     }
 }
 
-fs.readFile(caminho, {}, printLine);
+fs.readFile(caminho, {}, printContent);
